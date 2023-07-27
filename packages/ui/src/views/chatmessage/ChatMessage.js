@@ -25,6 +25,9 @@ import predictionApi from 'api/prediction'
 // Hooks
 import useApi from 'hooks/useApi'
 
+// logo
+import userlogo from 'assets/images/usericon.png'
+import ailogo from 'assets/images/parroticon.png'
 // Const
 import { baseURL, maxScroll } from 'store/constant'
 
@@ -281,21 +284,9 @@ export const ChatMessage = ({ open, chatflowid, isDialog }) => {
                                     >
                                         {/* Display the correct icon depending on the message type */}
                                         {message.type === 'apiMessage' ? (
-                                            <img
-                                                src='https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/parroticon.png'
-                                                alt='AI'
-                                                width='30'
-                                                height='30'
-                                                className='boticon'
-                                            />
+                                            <img src={ailogo} alt='AI' width='30' height='30' className='boticon' />
                                         ) : (
-                                            <img
-                                                src='https://raw.githubusercontent.com/zahidkhawaja/langchain-chat-nextjs/main/public/usericon.png'
-                                                alt='Me'
-                                                width='30'
-                                                height='30'
-                                                className='usericon'
-                                            />
+                                            <img src={userlogo} alt='Me' width='30' height='30' className='usericon' />
                                         )}
                                         <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
                                             <div className='markdownanswer'>
